@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'pangloss/vim-javascript'
     Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
     Plug 'Yggdroot/indentLine'
     Plug 'metakirby5/codi.vim'
 
@@ -41,6 +42,7 @@ set incsearch
 set confirm
 set encoding=utf-8
 set fileencoding=utf-8
+set updatetime=250
 
 " Airline
 let g:airline_theme = 'solarized'
@@ -76,5 +78,24 @@ let g:indentLine_enabled = 1
 let g:indentLine_leadingSpaceEnabled = 1
 
 let g:AutoPairsShortcutFastWrap=''
+
+let mapleader = ","
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>"
+
 map <C-n> :NERDTreeToggle<CR>
 autocmd VimEnter * NERDTree
