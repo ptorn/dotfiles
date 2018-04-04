@@ -1,0 +1,19 @@
+alias ls='ls --color=auto'
+
+# rsync
+alias rs='rsync -a -e "ssh"'
+alias rsv='rsync -avP -e "ssh"'
+
+# File/folder listing
+alias ls="ls -Fh"
+alias la='ls -aFh'
+alias ll='ls -lFh'
+alias lla='ls -laFh'
+
+# Updating system
+alias pacu='sudo pacman -Syyu --noconfirm'
+alias auru='yaourt -Syyua --noconfirm'
+
+# tmux
+alias tbs='tmux new-session -s basic'
+alias tb='tmux attach -t basic'
